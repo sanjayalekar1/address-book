@@ -64,6 +64,6 @@
         </div>
     </div>
   
-    {{$addresses->links('address.paginate')}}
+     {{$addresses->links('address.paginate')}} 
 </div>
 @endsection

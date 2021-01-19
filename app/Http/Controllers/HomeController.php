@@ -25,13 +25,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        /*  code using mamcached while enableling this remove links() from home,blade.php */
         //  $addresses =  Cache::rememberForever('addresses', function () {
-        //      return Address::orderby('created_at','DESC')->paginate(2);   
-        //  });
-       // $addresses = Address::orderby('created_at','DESC')->paginate(10);
-        $addresses = DB::table('addresses')
-        ->join('cities','addresses.city','cities.id')
-        ->paginate(10);
+        //      return Address::orderby('created_at','DESC')->get();   
+        //   });
+      
+        /* code for Pagination */
+         $addresses = DB::table('addresses')
+         ->join('cities','addresses.city','cities.id')
+         ->paginate(3);
      
         return view('home',compact('addresses'));
     }
