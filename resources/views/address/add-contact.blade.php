@@ -101,6 +101,7 @@
                                                     <div class="form-group">
                                                         <label for="profiepic">Profile Pic</label>
                                                         <input type="file" class="form-control  @error('profilepic') is-invalid @enderror" name="profilepic" onchange="readURL(this);" >
+                                                        (Prefered Dimention: 150 X 150)
                                                         @error('profilepic')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
@@ -108,6 +109,7 @@
                                                         @enderror
                                                     </div>
                                                     <img src="{{asset('images/default.png')}}" width="150px" height="150px" id="img" alt="Profile" />
+                                                   
                                             </div> 
                                                
                                         </div>
