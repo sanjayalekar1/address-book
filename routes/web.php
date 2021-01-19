@@ -26,3 +26,5 @@ Route::post('/insert-contact', [App\Http\Controllers\AddressController::class, '
 Route::get('/edit-contact/{id}', [App\Http\Controllers\AddressController::class, 'edit'])->name('edit-contact');
 Route::patch('/update-contact', [App\Http\Controllers\AddressController::class, 'update'])->name('update-contact');
 Route::get('/delete-contact/{id}', [App\Http\Controllers\AddressController::class, 'destroy'])->name('delete-contact');
+Route::get('exporttoexcel', [App\Http\Controllers\AddressController::class, 'exporttoExcel'])->name('exporttoexcel');
+Route::get('exporttocsv', [App\Http\Controllers\AddressController::class, 'exporttoCSV'])->name('exporttocsv');

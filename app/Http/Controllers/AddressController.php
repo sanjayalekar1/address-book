@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\City;
 use App\Models\Address;
 use Illuminate\Support\Facades\Cache;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\AddressExport;
 
-class AddressController extends Controller
+class AddressController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -168,5 +171,23 @@ class AddressController extends Controller
         $address->delete();
         return redirect()->back()->with('alert', 'Contact Deleted !');
 
+    }
+
+     /**
+    * @return \Illuminate\Support\Collection
+    */
+  
+
+    public function exporttoExcel() 
+    {
+        
+        return Excel::download(new AddressExport, 'address.xlsx');
+        
+    }
+    public function exporttoCSV() 
+    {
+        
+        return Excel::download(new AddressExport, 'address.csv');
+        
     }
 }

@@ -6,7 +6,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Address Book') }}  <a href="/add-contact" class="btn btn-info"><i class="fa fa-plus"></i> Create </a></div>
+                <div class="card-header">{{ __('Address Book') }}  
+                <a href="/add-contact" class="btn btn-info"><i class="fa fa-plus"></i> Create New </a>
+                <a href="/exporttoexcel" class="btn btn-info"><i class="fa fa-download"></i> Excel</a>
+                <a href="/exporttocsv" class="btn btn-info"><i class="fa fa-download"></i> CSV</a></div>
 
                 <div class="card-body">
                     @if (session('alert'))
